@@ -50,6 +50,20 @@ Score * HighscoreManager::GetScore(string name)
 	return found;
 }
 
+Score * HighscoreManager::GetScore(int pos)
+{
+	Score* found = NULL;
+	list<Score*>::iterator it;
+	int cont = 1;
+	for (it = scores.begin(); it != scores.end(); it++)
+	{
+		if (cont == pos)
+			found = *it;
+		cont++;
+	}
+	return found;
+}
+
 void HighscoreManager::ShowScores()
 {
 	cout << "------ HIGHSCORES ------" << endl;
@@ -68,4 +82,9 @@ void HighscoreManager::ShowScores()
 void HighscoreManager::SetTop(int val)
 {
 	top = val;
+}
+
+list<Score*> HighscoreManager::GetListScores() const
+{
+	return scores;
 }
