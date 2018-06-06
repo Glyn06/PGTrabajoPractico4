@@ -18,8 +18,10 @@ public:
 	void AddScore(string name, int score);
 	void RemoveScore(string name);
 	Score* GetScore(string name);
+	Score* GetScore(int pos);
 	void ShowScores();
 	void SetTop(int val);
+	list<Score*> GetListScores() const;
 };
 
 #endif
