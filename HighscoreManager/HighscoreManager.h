@@ -1,0 +1,25 @@
+#ifndef HIGHSCORE_MANAGER_H
+#define HIGHSCORE_MANAGER_H
+#include <list>
+#include <iterator>
+#include <iostream>
+#include <algorithm>
+#include "Score.h"
+
+using namespace std;
+
+class HighscoreManager
+{
+private:
+	list<Score*> scores;
+	int top;
+public:
+	HighscoreManager(int top);
+	void AddScore(string name, int score);
+	void RemoveScore(string name);
+	Score* GetScore(string name);
+	void ShowScores();
+	void SetTop(int val);
+};
+
+#endif
