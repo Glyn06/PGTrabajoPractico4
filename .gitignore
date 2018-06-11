@@ -8,3 +8,13 @@
 lib/
 
 Workbench/Debugobj/
+
+bin/
+
+Workbench/x64/
+
+HighscoreManager/Debug/
+
+HighscoreManager/Release/
+
+HighscoreManager/x64/
