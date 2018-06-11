@@ -2,3 +2,9 @@
 *.db
 
 \.vs/HighscoreManagerLib/v14/\.suo
+
+\.vs/
+
+lib/
+
+Workbench/Debugobj/
