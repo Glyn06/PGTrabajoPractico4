@@ -16,7 +16,8 @@ private:
 public:
 	HighscoreManager(int top);
 	void AddScore(string name, int score);
-	void RemoveScore(string name);
+	bool RemoveScore(string name);
+	bool RemoveScore(int pos);
 	Score* GetScore(string name);
 	Score* GetScore(int pos);
 	void ShowScores();

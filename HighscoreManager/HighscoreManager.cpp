@@ -23,7 +23,7 @@ void HighscoreManager::AddScore(string name, int score)
 		scores.pop_back();
 }
 
-void HighscoreManager::RemoveScore(string name)
+bool HighscoreManager::RemoveScore(string name)
 {
 	Score* found = NULL;
 	list<Score*>::iterator it;
@@ -35,6 +35,26 @@ void HighscoreManager::RemoveScore(string name)
 	}
 	if (found)
 		scores.remove(found);
+	return found != NULL;
+}
+
+bool HighscoreManager::RemoveScore(int pos)
+{
+	Score* found = NULL;
+	list<Score*>::iterator it;
+	if (pos > 0 && pos <= scores.size())
+	{
+		int contador = 1;
+		for (it = scores.begin(); it != scores.end(); it++)
+		{
+			if (found == NULL && contador == pos)
+				found = *it;
+			contador++;
+		}
+	}
+	if (found)
+		scores.remove(found);
+	return found != NULL;
 }
 
 Score * HighscoreManager::GetScore(string name)
